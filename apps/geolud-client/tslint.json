@@ -1,0 +1,7 @@
+{
+  "extends": "../../tslint.json",
+  "rules": {
+    "directive-selector": [true, "attribute", "geolud-nx", "camelCase"],
+    "component-selector": [true, "element", "geolud-nx", "kebab-case"]
+  }
+}

@@ -7,5 +7,15 @@
     "tslint.json": "*",
     "nx.json": "*"
   },
-  "projects": {}
+  "projects": {
+    "geolud-client": {
+      "tags": []
+    },
+    "geolud-client-e2e": {
+      "tags": []
+    },
+    "geolud-server-node": {
+      "tags": []
+    }
+  }
 }
