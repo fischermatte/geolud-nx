@@ -5,8 +5,17 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
+    "serve:client": "ng serve --project=geolud-client",
+    "serve:client-backend": "ng serve --project=geolud-client-backend",
+    "serve:server": "ng serve --project=geolud-server",
+    "build": "npm run build:client && npm run build:client-backend && npm run build:server ",
+    "build:client": "ng build --project=geolud-client",
+    "build:client-backend": "ng build --project=geolud-client-backend",
+    "build:server": "ng build --project=geolud-server",
+    "test": "npm run test:client && npm run test:client-backend && npm run test:server ",
+    "test:client": "ng test --project=geolud-client",
+    "test:client-backend": "ng test --project=geolud-client-backend",
+    "test:server": "ng test --project=geolud-server",
     "lint": "./node_modules/.bin/nx lint && ng lint",
     "e2e": "ng e2e",
     "affected:apps": "./node_modules/.bin/nx affected:apps",
@@ -25,7 +34,8 @@
     "workspace-schematic": "./node_modules/.bin/nx workspace-schematic",
     "dep-graph": "./node_modules/.bin/nx dep-graph",
     "help": "./node_modules/.bin/nx help",
-    "release": "standard-version"
+    "release": "standard-version",
+    "ci": "npm run lint && npm run test"
   },
   "private": true,
   "dependencies": {
