@@ -14,7 +14,10 @@
     "geolud-client-e2e": {
       "tags": []
     },
-    "geolud-server-node": {
+    "geolud-server": {
+      "tags": []
+    },
+    "geolud-client-backend": {
       "tags": []
     }
   }

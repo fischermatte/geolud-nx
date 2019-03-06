@@ -123,21 +123,21 @@
         }
       }
     },
-    "geolud-server-node": {
-      "root": "apps/geolud-server-node",
-      "sourceRoot": "apps/geolud-server-node/src",
+    "geolud-server": {
+      "root": "apps/geolud-server",
+      "sourceRoot": "apps/geolud-server/src",
       "projectType": "application",
-      "prefix": "geolud-server-node",
+      "prefix": "geolud-server",
       "schematics": {},
       "architect": {
         "build": {
           "builder": "@nrwl/builders:node-build",
           "options": {
-            "outputPath": "dist/apps/geolud-server-node",
-            "main": "apps/geolud-server-node/src/main.ts",
-            "tsConfig": "apps/geolud-server-node/tsconfig.app.json",
+            "outputPath": "dist/apps/geolud-server",
+            "main": "apps/geolud-server/src/main.ts",
+            "tsConfig": "apps/geolud-server/tsconfig.app.json",
             "assets": [
-              "apps/geolud-server-node/src/assets"
+              "apps/geolud-server/src/assets"
             ]
           },
           "configurations": {
@@ -147,8 +147,8 @@
               "inspect": false,
               "fileReplacements": [
                 {
-                  "replace": "apps/geolud-server-node/src/environments/environment.ts",
-                  "with": "apps/geolud-server-node/src/environments/environment.prod.ts"
+                  "replace": "apps/geolud-server/src/environments/environment.ts",
+                  "with": "apps/geolud-server/src/environments/environment.prod.ts"
                 }
               ],
               "externalDependencies": "none"
@@ -158,15 +158,15 @@
         "serve": {
           "builder": "@nrwl/builders:node-execute",
           "options": {
-            "buildTarget": "geolud-server-node:build"
+            "buildTarget": "geolud-server:build"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "apps/geolud-server-node/tsconfig.app.json",
-              "apps/geolud-server-node/tsconfig.spec.json"
+              "apps/geolud-server/tsconfig.app.json",
+              "apps/geolud-server/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -176,8 +176,67 @@
         "test": {
           "builder": "@nrwl/builders:jest",
           "options": {
-            "jestConfig": "apps/geolud-server-node/jest.config.js",
-            "tsConfig": "apps/geolud-server-node/tsconfig.spec.json"
+            "jestConfig": "apps/geolud-server/jest.config.js",
+            "tsConfig": "apps/geolud-server/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "geolud-client-backend": {
+      "root": "apps/geolud-client-backend",
+      "sourceRoot": "apps/geolud-client-backend/src",
+      "projectType": "application",
+      "prefix": "geolud-client-backend",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/builders:node-build",
+          "options": {
+            "outputPath": "dist/apps/geolud-client-backend",
+            "main": "apps/geolud-client-backend/src/main.ts",
+            "tsConfig": "apps/geolud-client-backend/tsconfig.app.json",
+            "assets": [
+              "apps/geolud-client-backend/src/assets"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/geolud-client-backend/src/environments/environment.ts",
+                  "with": "apps/geolud-client-backend/src/environments/environment.prod.ts"
+                }
+              ],
+              "externalDependencies": "none"
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/builders:node-execute",
+          "options": {
+            "buildTarget": "geolud-client-backend:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/geolud-client-backend/tsconfig.app.json",
+              "apps/geolud-client-backend/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "apps/geolud-client-backend/jest.config.js",
+            "tsConfig": "apps/geolud-client-backend/tsconfig.spec.json"
           }
         }
       }

@@ -14,8 +14,8 @@ describe('AppService', () => {
   });
 
   describe('getData', () => {
-    it('should return "Welcome to geolud-server-node!"', () => {
-      expect(service.getData()).toBe('Welcome to geolud-server-node!');
+    it('should return "Welcome to geolud-server!"', () => {
+      expect(service.getData()).toBe('Welcome to geolud-server!');
     });
   });
 });

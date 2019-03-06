@@ -14,9 +14,9 @@ describe('AppController', () => {
   });
 
   describe('getData', () => {
-    it('should return "Welcome to geolud-server-node!"', () => {
+    it('should return "Welcome to geolud-server!"', () => {
       const appController = app.get<AppController>(AppController);
-      expect(appController.getData()).toBe('Welcome to geolud-server-node!');
+      expect(appController.getData()).toBe('Welcome to geolud-server!');
     });
   });
 });

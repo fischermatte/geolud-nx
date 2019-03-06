@@ -3,6 +3,6 @@ import { Injectable } from '@nestjs/common';
 @Injectable()
 export class AppService {
   getData(): string {
-    return 'Welcome to geolud-server-node!';
+    return 'Welcome to geolud-client-backend!';
   }
 }
