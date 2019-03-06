@@ -35,7 +35,7 @@
     "dep-graph": "./node_modules/.bin/nx dep-graph",
     "help": "./node_modules/.bin/nx help",
     "release": "standard-version",
-    "ci": "npm run lint && npm run test"
+    "ci": "npm run lint && npm run test && npm run build"
   },
   "private": true,
   "dependencies": {
