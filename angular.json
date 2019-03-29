@@ -20,10 +20,11 @@
             "tsConfig": "apps/geolud-client/tsconfig.app.json",
             "assets": [
               "apps/geolud-client/src/favicon.ico",
+              "apps/geolud-client/src/assets",
               "apps/geolud-client/src/assets"
             ],
             "styles": [
-              "apps/geolud-client/src/styles.css"
+              "apps/geolud-client/src/styles.scss"
             ],
             "scripts": [],
             "es5BrowserSupport": true
@@ -249,6 +250,10 @@
     },
     "defaultCollection": "@nrwl/schematics"
   },
-  "schematics": {},
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  },
   "defaultProject": "geolud-client"
 }
